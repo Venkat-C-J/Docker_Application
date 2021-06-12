@@ -1,0 +1,31 @@
+docker pull <image-name>--> will pull the latest image from dockerhub
+docker pull <image-name:ver>-->will pull the image with respective to the version specified from dockerhub
+docker pull registryDomain/imageName:tag -->when using from private docker repository
+docker run <image-name>--> will pull and run the latest image from dockerhub in attached mode
+docker run <image-name:ver>-->will pull and run the image with respective to the version specified from dockerhub in attached mode
+docker run -d <image-name>--> will pull and run the latest image from dockerhub in detach mode
+docker run -d <image-name:ver>-->will pull and run the image with respective to the version specified from dockerhub in detach mode
+docker run -p<host-port>:<container-port> <image-name>-->will bind the host-port to the container-port so that container can be reachiable from host port
+docker run --name <name-for-container> <image-name>-->create a containerwith specified name
+docker run -d -p<host-port>:<container-port> --name <name-for-container> <image-name>
+docker ps-->shows the running containers
+docker ps -a-->lists running and stopped container
+docker images-->shows all the images on our m/c
+docker stop <container-id>-->will stop the container
+docker start <container-id>-->will start the container
+docker logs <container-id>/<container-name>-->shows the logs of the container
+docker exec -it <container-id>/<container-name> /bin/bash-->open the terminal of the container(-it stands for interactive terminal)
+docker network ls-->shows the available docker networks
+docker network create <network-name>-->create a new docker network
+docker rum -d -p<host-port>:<container-port>                                                                                                            -e <environmental-variable>...                                                                                                         --name <container-name>                                                                                                                --net <network-name> <image-name>-->will pul and start the image in the specified network with specified environmental-variables(environmental-variable willbe available in the docker hub for the respective image)
+docker-compose -f <file-name.yamal> up-->will start all the containers in the yamal file specified
+docker-compose -f <file-name.yamal> down-->will stop all the containers in the yamal file specified
+docker build -t <name-for-image:version> <Docker-File-Location>-->will build a new image
+docker rm <container-id>-->delete a container with specified ID
+docker rmi <image-id>-->delete a image with specified ID
+docker login registryDomain -u <user-name> -p <password>-->to login to the docker repository
+docker tag <local-imageName:tag> registryDomain/imageName:tag-->to tag an image
+docker push <tag-image-name>-->will push the image to docker repository
+docker run -v <host-volume>:<container-volume>-->Host volume
+docker run -v <container-volume>-->Anonymous volumes
+docker run -v name:<container-volume>-->Named volumes
